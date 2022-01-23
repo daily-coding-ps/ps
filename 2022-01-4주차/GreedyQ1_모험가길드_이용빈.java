@@ -13,7 +13,7 @@ public class GreedyQ1_LYB {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         int N = Integer.parseInt(br.readLine()); // 모험가의 수
-        Integer[] list = new Integer[N]; // 각 모험가의 공포도 값 ( 보통 int[]을 쓰지만 역순 정렬을 위해 Integer[] 사용 )
+        int[] list = new int[N]; // 각 모험가의 공포도 값
 
         StringTokenizer st = new StringTokenizer(br.readLine());
 
@@ -21,18 +21,20 @@ public class GreedyQ1_LYB {
             list[i] = Integer.parseInt(st.nextToken()); // 공포도의 값을 입력받음
         }
 
-        Arrays.sort(list, Collections.reverseOrder()); // 역순 정렬
+        Arrays.sort(list); // 최대한 많은 파티를 만들기 위해 오름차순 정렬
+        /*
+        5 1 1 1 1의 경우 내림차순 정렬해서 파티를 만들면 5를 기준으로 (5 1 1 1 1)이 되지만
+        오름차순 정렬으로 1 1 1 1 5 를 하면 (1) (1) (1) (1) 5 와 같이 4파티가 만들어진다
+         */
 
         int party = 0; // 파티 개수
-        int i = 0;
-        while (i < N) {
-            // 현재 파티에 참가한 인원 + 다음 사람의 공포도 > 전체 인원 인지 확인
-            // ex) 총 파티원이 4명이고 현재 참가자가 3명인데 남은 1명의 공포도가 2 이상인 경우 // (3 3 2) / (2 ?)
-            if (i + list[i] > N) {
-                break; // 파티를 만들지 않고 반복 종료
+        int member = 0;
+        for (int i = 0; i < N; i++) {
+            member += 1;
+            if (list[i] == member) { // 공포도와 멤버수가 일치하는지 확인, 일치한다면 파티를 만들 최소조건이 되서 만들 수 있음
+                party++;
+                member = 0;
             }
-            i += list[i]; // 파티인원을 공포도가 제일 큰 사람 만큼 생성
-            party++; // 파티 개수 증가
         }
 
         System.out.println(party);
