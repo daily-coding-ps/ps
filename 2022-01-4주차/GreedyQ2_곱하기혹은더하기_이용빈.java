@@ -16,7 +16,7 @@ public class GreedyQ2_LYB {
         int answer = 0; // 최초값은 0
         // 입력값이 1 2 3 4 일때 -> 0 1 2 3 4 라고 가정한뒤 0 + 1 을 하면서 시작
         for (int num : array) {
-            answer = (num == 0 || answer == 0) ? answer + num : answer * num; // 두 수 중 0이 있으면 더하고 아닐 경우 곱을 한다
+            answer = (num <= 1 || answer <= 1) ? answer + num : answer * num; // 두 수 중 0이 있으면 더하고 아닐 경우 곱을 한다
         }
         System.out.println(answer);
     }
