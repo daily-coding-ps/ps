@@ -10,4 +10,4 @@ for x in s:
         else:
             result *= int(x)
 
-
+print(result)
