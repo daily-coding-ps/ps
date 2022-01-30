@@ -1,4 +1,4 @@
-public class ImplQ7_럭키스트레이트_이용빈 {
+public class ImplQ8_문자열재정렬_이용빈 {
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
