@@ -20,7 +20,7 @@ def solution(board):
         cl, cr, cnt = curr[0], curr[1], curr[2]
         cli, clj, cri, crj = cl[0], cl[1], cr[0], cr[1]
 
-        if dic.get((cl,cr)) and dic[(cl,cr)] < cnt:
+        if dic.get((cl,cr)):
             continue
         else:
             dic[(cl,cr)] = cnt
@@ -54,11 +54,11 @@ def solution(board):
                 q.append([(cli+1,crj),(cri+1,crj),cnt+1])
             if clj-1 >= 0 and crj - 1 >= 0:
                 if (board[cli][clj-1] + board[cri][crj-1] == 0): # 왼쪽으로 갈 수 있을때
-                    q.append([(cli,clj-1),(cri,cri-1),cnt+1]) # 왼쪽
+                    q.append([(cli,clj-1),(cri,crj-1),cnt+1]) # 왼쪽
                     q.append([(cli,clj-1),(cli,clj),cnt+1]) # 왼쪽 위
                     q.append([(cri,crj-1),(cri,crj),cnt+1]) # 왼쪽 아래
             if cli -1 >= 0 and board[cli-1][clj] == 0:
-                q.append([(cli-1,clj),(cri-1,crj),cnt])
+                q.append([(cli-1,clj),(cri-1,crj),cnt+1])
 
 
 
