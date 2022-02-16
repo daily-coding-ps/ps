@@ -13,20 +13,6 @@ Sanghyun 70 70 80
 nsj 80 80 80
 Taewhan 50 60 90
 '''
-
-'''
-
-n = int(input())
-array = []
-for i in range(n):
-    array.append(input().split())
-    
-array.sort(key=lambda x: (-int(x[1]), int(x[2]), -int(x[3]), x[0]))
-
-for student in array:
-    print(student[0])
-
-'''
     
 n = int(input())
 array = []
