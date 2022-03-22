@@ -50,7 +50,7 @@ public class 경주로 건설 {
                     }
 
                     // 처음 방문하거나 이전에 방문했을 때의 비용보다 작거나 같으면
-                    if (!visited[nx][ny][i] || board[nx][ny] + 600 >= newCost) {
+                    if (!visited[nx][ny][i] || board[nx][ny] >= newCost) {
                         visited[nx][ny][i] = true;
                         board[nx][ny] = newCost; // 최저 비용 갱신
                         q.add(new Node(nx, ny, newCost, i)); // 해당 지점으로 이동한다
