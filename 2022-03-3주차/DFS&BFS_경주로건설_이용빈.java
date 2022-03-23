@@ -28,8 +28,6 @@ public class 경주로 건설 {
 
         q.add(new Node(0, 0, 0, -1));
 
-        visited[0][0][0] = true;
-
         while (!q.isEmpty()) {
             Node node = q.poll();
 
