@@ -12,10 +12,7 @@ def bfs():
                 queue.append([nx, ny])
  
 m, n = map(int, input().split())
-graph = []
-for i in range(n):
-    graph.append(list(map, int, input().split()))
-
+graph = [list(map(int, input().split())) for _ in range(n)]
 queue = deque([])
 dx = [-1, 1, 0, 0]
 dy = [0, 0, -1, 1]
