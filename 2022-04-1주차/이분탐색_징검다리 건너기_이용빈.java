@@ -17,7 +17,7 @@ public class 징검다리 건너기 {
                 high = mid - 1;
             } else {
                 low = mid + 1;
-                answer = Math.max(answer, mid);
+                answer = max;
             }
         }
 
