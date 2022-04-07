@@ -8,7 +8,6 @@ def solution(distance, rocks, n):
     while l <= r:
         m = (l+r) // 2
         
-        min_value = 1000000000000
         curr = 0
         cnt = 0
         
@@ -16,11 +15,10 @@ def solution(distance, rocks, n):
             if (i - curr) < m:
                 cnt += 1
             else:
-                min_value = min(min_value, i - curr)
                 curr = i
                 
         if cnt <= n:
-            answer = min_value
+            answer = m
             l = m + 1
         else:
             r = m - 1
