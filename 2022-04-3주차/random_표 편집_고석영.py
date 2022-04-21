@@ -8,8 +8,7 @@ Z 복구
 - 개체 정의
 - 
 '''
-from compileall import compile_dir
-from os import link
+
 
 
 def solution(n, k, cmd):
@@ -17,7 +16,7 @@ def solution(n, k, cmd):
     linked_list =  {i: [i - 1, i + 1] for i in range(1, n + 1)} # 1~8로 저장
     cursor = k + 1 
     delete = [] #  삭제 항목 리스트
-    res = ['0'] * n # 상태 변화 리스트
+    res = ['O'] * n # 상태 변화 리스트
     
     for i in cmd:
         print('now cursor: ', cursor)
