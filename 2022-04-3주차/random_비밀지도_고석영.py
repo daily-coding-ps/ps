@@ -1,36 +1,19 @@
-'''
-<문제 설명>
-- 지도는 한 변의 길이가 n인 정사각형 배열 형태. 
-- 각 칸은 "공백"(" ") 또는 "벽"("#") 두 종류
-
-- 전체 지도는 두 장의 지도를 겹쳐서
-- 각각 "지도 1"과 "지도 2"이라고 했을때 두 지도 중 어느 하나라도 벽인 부분은 전체 지도에서도 벽
-- 두 지도 모두 공백인 부분은 전체 지도에서도 공백
-- "지도 1"과 "지도 2"는 각각 정수 배열로 암호화
-- 암호화된 배열은 지도의 각 가로줄에서 벽 부분을 1, 공백 부분을 0으로 부호화했을 때 얻어지는 이진수에 해당하는 값의 배열
-
-<출력 형식>
-'#'와 공백으로 구성된 문자열 배열로 출력
-'''
-
-n = 5
-arr1 = [9, 20, 28, 18, 11]
-arr2 = [30, 1, 21, 17, 28]
-answer = []
-for i in range(n):
-    # 2진수 변환(변환시 접두어 제외하고 변환)
-    arr1[i], arr2[i] = int(format(arr1[i], 'b')), int(format(arr2[i], 'b'))
-    
-    k = " "
-    a = str(arr1[i] + arr2[i])
-    
-    if len(a) < n:
-        a = '0' * (n - len(a)) + a
-    
-    for j in a:
-        if j == '0':
-            k += " "
-        else:
-            k += "#"
-    answer.append(k)
-print(answer)
+def solution(n, arr1, arr2):
+    answer = []
+    for i in range(n):
+        # 2진수 변환(변환시 접두어 제외하고 변환)
+        arr1[i], arr2[i] = int(format(arr1[i], 'b')), int(format(arr2[i], 'b'))
+        
+        k = " "
+        a = str(arr1[i] + arr2[i])
+        
+        if len(a) < n:
+            a = '0' * (n - len(a)) + a
+        
+        for j in a:
+            if j == '0':
+                k += " "
+            else:
+                k += "#"
+        answer.append(k)
+    return answer
