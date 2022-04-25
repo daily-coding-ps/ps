@@ -1,7 +1,12 @@
-public int solution(int n, int[] lost, int[] reserve) {
+import java.util.*;
+class Solution {
+    public int solution(int n, int[] lost, int[] reserve) {
         int answer = 0;
         
         answer+=n-lost.length;
+        
+        Arrays.sort(lost);
+        Arrays.sort(reserve);
         
        for(int i=0;i<lost.length;i++) {
     	   for(int j=0;j<reserve.length;j++) {
@@ -30,3 +35,4 @@ public int solution(int n, int[] lost, int[] reserve) {
        }
         return answer;
     }
+}
