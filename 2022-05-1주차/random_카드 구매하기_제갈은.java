@@ -22,11 +22,9 @@ public class BOJ11052 {
 			arr[i]=Integer.parseInt(st.nextToken());
 		}
 		
-		int max = 0;
-		for(int i=1;i<=n;i++) {
+		for(int i=1;i<arr.length;i++) {
 			for(int j=1;j<=i;j++) {
-				dp[i] = Math.max(dp[i], arr[j]+dp[i-j]);
-				// i개 구매할 때의 최댓값
+				dp[i]=Math.max(dp[i], arr[j]+dp[i-j]);
 			}
 		}
 		
