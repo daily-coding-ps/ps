@@ -21,6 +21,7 @@ for word in check:
         if message_queue[i] and word == message_queue[i][0]:
             message_queue[i].popleft()
             removed.append(word)
+            print(message_queue)
             break
 
 for i in range(N):
