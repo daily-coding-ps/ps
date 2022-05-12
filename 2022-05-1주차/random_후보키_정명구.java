@@ -23,18 +23,15 @@ class Solution {
                 }
             }
 
-            Map<String, Integer> map = new HashMap<>();
+            HashSet<String> hs = new HashSet<>();
 
             for (int i = 0; i < relation.length; i++) {
                 String s = "";
                 for (Integer j : list) {
                     s += relation[i][j];
                 }
-
-                if (map.containsKey(s)) {
+                if (!hs.add(s)) {
                     return;
-                }else {
-                    map.put(s, 0);
                 }
             }
 
